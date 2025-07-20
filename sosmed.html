@@ -4,14 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About ziy offc</title>
-
   <style>
-    * {
-      margin: 0; padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
     body {
       background: #000;
       color: #fff;
@@ -21,7 +15,6 @@
       align-items: center;
       overflow-x: hidden;
     }
-
     canvas {
       position: fixed;
       top: 0; left: 0;
@@ -29,7 +22,6 @@
       z-index: 0;
       pointer-events: none;
     }
-
     .container {
       z-index: 1;
       padding: 100px 20px 90px;
@@ -39,7 +31,6 @@
       width: 100%;
       max-width: 600px;
     }
-
     .profile-img {
       width: 160px;
       height: 160px;
@@ -47,10 +38,8 @@
       object-fit: cover;
       border: 4px solid #00bfff;
       box-shadow: 0 0 20px #00bfff;
-      margin-bottom: 0px;
       margin: 1px;
     }
-
     .name {
       font-size: 35px;
       font-weight: bold;
@@ -58,17 +47,14 @@
       margin-bottom: 30px;
       height: 32px;
     }
-
     .typing::after {
       content: '♪';
       animation: blink 1s infinite;
     }
-
     @keyframes blink {
       0%, 50% { opacity: 5; }
       51%, 100% { opacity: 0; }
     }
-
     .link-list, .music-box {
       width: 100%;
       display: flex;
@@ -76,7 +62,6 @@
       align-items: center;
       gap: 15px;
     }
-
     .link-list a {
       width: 100%;
       max-width: 300px;
@@ -88,14 +73,11 @@
       font-size: 16px;
       text-align: center;
       transition: 0.3s;
-      margin-bottom: 1;
     }
-
     .link-list a:hover {
       background-color: red;
       transform: scale(1.03);
     }
-
     .music-box {
       background: rgba(255, 255, 255, 0.08);
       border: 2px solid #00b;
@@ -103,7 +85,6 @@
       padding: 20px;
       max-width: 1500px;
     }
-
     .music-box button {
       width: 100%;
       background-color: #00bf;
@@ -116,12 +97,7 @@
       cursor: pointer;
       transition: 0.3s;
     }
-     
-
-    .music-box button:hover {
-      background-color: red;
-    }
-
+    .music-box button:hover { background-color: red; }
     footer {
       margin: 1px 0 1px;
       font-size: 15px;
@@ -129,7 +105,6 @@
       text-align: center;
       z-index: 1;
     }
-
     @media (max-width: 600px) {
       .name { font-size: 20px; }
       .link-list a, .music-box button {
@@ -140,42 +115,35 @@
   </style>
 </head>
 <body>
-
-  <!-- Efek Matrix Code Rain -->
   <canvas id="matrix"></canvas>
-
   <div class="container">
     <img src="https://files.catbox.moe/o9yalk.jpg" alt="ziy offc" class="profile-img" />
     <div class="name"><span class="typing" id="type-text"></span></div>
-  <footer style="color: white;content: '♪';animation: blank;">I am a young man who is learning coding, my name is Fahrezi, I am 14 years old, I live in Central Java province️ </footer>
-  
+    <footer style="color: white;">I am a young man who is learning coding, my name is Fahrezi, I am 14 years old, I live in Central Java province️</footer>
     <div class="link-list">
       <a href="https://wa.me/628818542487" target="_blank">WhatsApp</a>
       <a href="https://www.tiktok.com/@zyxxx_192?_t=ZS-8xm5AFbaWPg&_r=1" target="_blank">TikTok</a>
       <a href="https://www.instagram.com/zieeex_x?igsh=ZThkN2Q5a3IxcXQy" target="_blank">Instagram</a>
       <a href="https://whatsapp.com/channel/0029VbBAUZi3bbV8ahUhq60C" target="_blank">WhatsApp Channel</a>
-  
-    <div class="music-box">
-      <audio id="myAudio" loop>
-        <source src="https://files.catbox.moe/64w5r5.mp3" type="audio/mpeg">
-        Browser kamu tidak mendukung audio.
-      </audio>
-      <button onclick="document.getElementById('myAudio').play()">▶ Play</button>
-      <button onclick="document.getElementById('myAudio').pause()">⏸ Pause</button>
+      <div class="music-box">
+        <audio id="myAudio" loop>
+          <source src="https://files.catbox.moe/64w5r5.mp3" type="audio/mpeg">
+          Browser kamu tidak mendukung audio.
+        </audio>
+        <button onclick="document.getElementById('myAudio').play()">▶ Play</button>
+        <button onclick="document.getElementById('myAudio').pause()">⏸ Pause</button>
+      </div>
+      <p style="margin-top: 20px; font-size: 14px; color: #aaa;">
+        👁️ Sudah dilihat <span id="visitorCount">...</span> kali
+      </p>
+      <p id="countdown" style="margin-top: 10px; font-size: 14px; color: #00bfff;">
+        Menghitung mundur ke 28 Februari...
+      </p>
     </div>
-
-    <p style="margin-top: 20px; font-size: 14px; color: #aaa;">
-      👁️ Sudah dilihat <span id="visitorCount">...</span> kali
-    </p>
-
-    <p id="countdown" style="margin-top: 10px; font-size: 14px; color: #00bfff;">
-      Menghitung mundur ke 28 Februari...
-    </p>
   </div>
-
   <footer>© 2025 About Fahrezi | Built with ❤️</footer>
 
-  <!-- Efek Ketikan -->
+  <!-- Efek ketikan nama -->
   <script>
     const text = "FAHREZI";
     let i = 0;
@@ -189,16 +157,17 @@
     }
     window.addEventListener("load", typeEffect);
   </script>
-  <!-- Visitor Counter -->
+
+  <!-- Visitor counter unik untuk MAS-ZIY -->
   <script>
-    fetch('https://api.countapi.xyz/hit/ziy-offc-counter/visits')
+    fetch('https://api.countapi.xyz/hit/ziy-offc-masziy/visits')
       .then(res => res.json())
       .then(data => {
         document.getElementById('visitorCount').innerText = data.value;
       });
   </script>
 
-  <!-- Countdown -->
+  <!-- Countdown ke 28 Februari -->
   <script>
     function getNextFeb28() {
       const now = new Date();
@@ -209,69 +178,54 @@
       }
       return feb28.getTime();
     }
-
     const countdownEl = document.getElementById("countdown");
     function updateCountdown() {
       const now = new Date().getTime();
       const target = getNextFeb28();
       const distance = target - now;
-
       if (distance <= 0) {
         countdownEl.innerHTML = "🎉 Hari spesial 28 Februari tiba!";
         return;
       }
-
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
       countdownEl.innerHTML = `🕒 ${days} hari ${hours} jam ${minutes} menit ${seconds} detik menuju ulang tahun ziy!`;
     }
-
     setInterval(updateCountdown, 1000);
   </script>
 
-  <!-- MATRIX RAIN SCRIPT -->
+  <!-- Efek Matrix Rain -->
   <script>
     const canvas = document.getElementById("matrix");
     const ctx = canvas.getContext("2d");
-
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
-
-    const letters = "アァイィウエカキクケコサシスセソABCDEFGHIJKLMNOPQRSTUVWXYZ01234#@$$-_(;@_#+_(&9_$)$+56789yg-_+#6asujanok♪€♪♥♥ghdjjdidiuvfgtggdduihioiyhhsアァイィウエカキクケコサシスセソABCDEFGHIJKLMNOPQRSTUVWXYZ01234#@$$-_(;@_#+_(&9_$)$+56789yg-_+#6asujanok♪€♪♥♥ghdアァイィウエカキクケコサシスセソABCDEFGHIJKLMNOPQRSTUVWXYZ01234#@$$-_(;@_#+_(&9_$)$+56789yg-_+#6asujanok♪€♪♥♥ghdjjdidiuvfgtggdduihioiyhhjjdidiuvfgtggdduihioiyhh";
+    const letters = "アァイィウエカキクケコサシスセソABCDEFGHIJKLMNOPQRSTUVWXYZ01234#@$$♪€♥";
     const fontSize = 14;
     const columns = canvas.width / fontSize;
     const drops = Array.from({ length: columns }).fill(1);
-
     function draw() {
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-
       ctx.fillStyle = "#0F0";
       ctx.font = fontSize + "px monospace";
-
       drops.forEach((y, i) => {
         const text = letters[Math.floor(Math.random() * letters.length)];
         const x = i * fontSize;
         ctx.fillText(text, x, y * fontSize);
-
         if (y * fontSize > canvas.height && Math.random() > 0.975) {
           drops[i] = 0;
         }
         drops[i]++;
       });
     }
-
     setInterval(draw, 33);
-
     window.addEventListener("resize", () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
   </script>
-
 </body>
-    </html>
-  
+        </html>
