@@ -133,9 +133,18 @@
         <button onclick="document.getElementById('myAudio').play()">▶ Play</button>
         <button onclick="document.getElementById('myAudio').pause()">⏸ Pause</button>
       </div>
-      <p style="margin-top: 20px; font-size: 14px; color: #aaa;">
-        👁️ Sudah dilihat <span id="visitorCount">...</span> kali
-      </p>
+<p style="margin-top: 20px; font-size: 14px; color: #aaa;">
+  👁️ Sudah dilihat <span id="visitorCount">...</span> kali
+</p>
+
+<script>
+  fetch("https://api.countapi.xyz/hit/ziy-masziy/view")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("visitorCount").innerText = data.value;
+    });
+</script>
+
       <p id="countdown" style="margin-top: 10px; font-size: 14px; color: #00bfff;">
         Menghitung mundur ke 28 Februari...
       </p>
